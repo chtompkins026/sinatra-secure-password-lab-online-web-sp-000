@@ -32,7 +32,7 @@ class ApplicationController < Sinatra::Base
   end #end of post signup 
 
   get '/account' do
-    @user = User.find(session[:user_id])
+    @user = current_user
     erb :account
   end
 
